@@ -5,5 +5,8 @@ In the 103server, our anaconda environment "KPA" can be reference for establishi
 ## dataset
 Our compression datasets can be found in the 103 server which located at /Datasets/submaps 
 ## train 
+python3 trainer.py -cfg <path-to-your-config>
 ## test 
+python3 test.py -cfg <path-to-your-config>
 ## visulize 
+python3 visuliaze .py
