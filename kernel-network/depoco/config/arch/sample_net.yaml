@@ -1,0 +1,40 @@
+grid:
+  pose_distance: 15
+  size: #x,y,z
+    - 40.0
+    - 40.0
+    - 15.0 # ca. -9 to 4 => center at 2.5
+  dz: 4.0 # offset to pose center in z direction, = 2.5 - size['z']/2
+  voxel_size: 0.1
+  max_range: 20.0
+  min_range: 2.0
+  features: ['intensity','label','eigenvalues','normals']
+  feature_dim: [1,1,3,3]
+  normal_eigenvalue_radius: 0.5 # radius for computing normals and the eigenvalues
+
+evaluation:
+  float16: True
+  iou_grid:
+    resolution: [0.2,0.2,0.1]
+  f_score_dist: 0.1 # distance for being outlier
+  out_dir: 'experiments/results/kitti/'
+
+dataset:
+  data_folders:
+    grid_output: "/home/yy/Nuscene_submap" #path/to/the/submaps/
+    prefix: "/home/yy/nusc_kitti/" #only needed for Kitti2Submap conversion (kitti-format)
+    train: 
+      - "00"
+      - "01"
+      - "02"
+      - "03"
+      - "04"
+      - "05"
+      - "06"
+      - "07"
+      - "09"
+      - "10"
+    valid:
+      - "validation"
+    test:
+      - "mini_val"
